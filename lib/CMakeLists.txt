@@ -40,10 +40,10 @@ if(NOT lora_sources)
 	MESSAGE(STATUS "No C++ sources... skipping lib/")
 	return()
 endif(NOT lora_sources)
-
 list(APPEND lora_libs
     ${Boost_LIBRARIES}
-    ${GNURADIO_ALL_LIBRARIES}
+    gnuradio-runtime
+    gnuradio-fft
     ${VOLK_LIBRARIES}
 )
 
@@ -73,18 +73,18 @@ include(GrTest)
 
 include_directories(${CPPUNIT_INCLUDE_DIRS})
 
-list(APPEND test_lora_sources
-    ${CMAKE_CURRENT_SOURCE_DIR}/test_lora.cc
-    ${CMAKE_CURRENT_SOURCE_DIR}/qa_lora.cc
-)
+#list(APPEND test_lora_sources
+#    ${CMAKE_CURRENT_SOURCE_DIR}/test_lora.cc
+#    ${CMAKE_CURRENT_SOURCE_DIR}/qa_lora.cc
+#)
 
-add_executable(test-lora ${test_lora_sources})
+#add_executable(test-lora ${test_lora_sources})
 
-target_link_libraries(
-  test-lora
-  ${lora_libs}
-  ${CPPUNIT_LIBRARIES}
-  gnuradio-lora
-)
+#target_link_libraries(
+#  test-lora
+#  ${lora_libs}
+#  ${CPPUNIT_LIBRARIES}
+#  gnuradio-lora
+#)
 
-GR_ADD_TEST(test_lora test-lora)
+#GR_ADD_TEST(test_lora test-lora)

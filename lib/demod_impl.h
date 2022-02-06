@@ -60,7 +60,7 @@ namespace gr {
       std::vector<unsigned short>  d_sfd_history;
       unsigned short  d_sync_recovery_counter;
 
-      fft::fft_complex   *d_fft;
+      fft::fft_complex_rev   *d_fft;
       std::vector<float> d_window;
       float              d_beta;
 

@@ -1,0 +1,27 @@
+id: lora_demod
+label: demod
+category: '[Lora]'
+templates:
+  imports: import lora
+  make: lora.demod(${spreading_factor}, ${low_data_rate}, ${beta}, ${fft_factor})
+parameters:
+- id: spreading_factor
+  label: Spreading_factor
+  dtype: raw
+- id: low_data_rate
+  label: Low_data_rate
+  dtype: raw
+- id: beta
+  label: Beta
+  dtype: float
+- id: fft_factor
+  label: Fft_factor
+  dtype: raw
+inputs:
+- label: in
+  domain: stream
+  dtype: complex
+outputs:
+- domain: message
+  id: out
+file_format: 1

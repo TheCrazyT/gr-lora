@@ -36,7 +36,7 @@ namespace gr {
     class LORA_API mod : virtual public gr::block
     {
      public:
-      typedef boost::shared_ptr<mod> sptr;
+      typedef std::shared_ptr<mod> sptr;
 
       /*!
        * \brief Return a shared_ptr to a new instance of lora::mod.

@@ -22,6 +22,12 @@
 This is the GNU Radio LORA module. Place your Python package
 description here (python/__init__.py).
 '''
+# import pybind11 generated symbols into the howto namespace
+try:
+    # this might fail if the module is python-only
+    from gnuradio.lora.lora_python import *
+except ModuleNotFoundError:
+    pass
 
 # import swig generated symbols into the lora namespace
 try:

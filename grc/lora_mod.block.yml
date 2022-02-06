@@ -1,0 +1,21 @@
+id: lora_mod
+label: mod
+category: '[Lora]'
+templates:
+  imports: import lora
+  make: lora.mod(${spreading_factor}, ${d_sync_word})
+parameters:
+- id: spreading_factor
+  label: Spreading_factor
+  dtype: raw
+- id: d_sync_word
+  label: D_sync_word
+  dtype: byte
+inputs:
+- domain: message
+  id: out
+outputs:
+- label: out
+  domain: stream
+  dtype: complex
+file_format: 1

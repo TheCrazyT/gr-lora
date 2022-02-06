@@ -39,7 +39,7 @@ namespace gr {
     class LORA_API decode : virtual public gr::block
     {
      public:
-      typedef boost::shared_ptr<decode> sptr;
+      typedef std::shared_ptr<decode> sptr;
 
       /*!
        * \brief Return a shared_ptr to a new instance of lora::decode.

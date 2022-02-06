@@ -31,8 +31,13 @@ if(NOT CMAKE_BUILD_TYPE)
 endif(NOT CMAKE_BUILD_TYPE)
 set(CMAKE_BUILD_TYPE ${CMAKE_BUILD_TYPE} CACHE STRING "")
 
+message("CMAKE_SOURCE_DIR: ${CMAKE_SOURCE_DIR}")
+
 #make sure our local CMake Modules path comes first
 list(INSERT CMAKE_MODULE_PATH 0 ${CMAKE_SOURCE_DIR}/cmake/Modules)
+
+message("CMAKE_MODULE_PATH: ${CMAKE_MODULE_PATH}")
+
 
 if(POLICY CMP0026)
    #allow reading location properties from build targets
@@ -122,11 +127,14 @@ find_package(Doxygen)
 # API compatible version required.
 set(GR_REQUIRED_COMPONENTS RUNTIME BLOCKS PMT FFT VOLK)
 find_package(Gnuradio REQUIRED)
+include(GrVersion)
+find_package(GrPlatform)
+#find_package(GnuradioRuntime REQUIRED)
 find_package(Volk REQUIRED)
 
-if(NOT GNURADIO_RUNTIME_FOUND)
-    message(FATAL_ERROR "GnuRadio Runtime required to compile lora")
-endif()
+#if(NOT GNURADIO_RUNTIME_FOUND)
+#    message(FATAL_ERROR "GnuRadio Runtime required to compile lora")
+#endif()
 if(NOT CPPUNIT_FOUND)
     message(FATAL_ERROR "CppUnit required to compile lora")
 endif()
@@ -187,7 +195,7 @@ add_custom_target(uninstall
 ########################################################################
 add_subdirectory(include/lora)
 add_subdirectory(lib)
-add_subdirectory(swig)
+#add_subdirectory(swig)
 add_subdirectory(python)
 add_subdirectory(grc)
 add_subdirectory(apps)

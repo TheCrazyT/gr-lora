@@ -53,7 +53,7 @@ namespace gr {
 
       d_in_port = pmt::mp("in");
       message_port_register_in(d_in_port);
-      set_msg_handler(d_in_port, boost::bind(&mod_impl::modulate, this, _1));
+      set_msg_handler(d_in_port, boost::bind(&mod_impl::modulate, this, boost::placeholders::_1));
 
       d_fft_size = (1 << d_sf);
 

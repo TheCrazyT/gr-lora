@@ -53,7 +53,7 @@ namespace gr {
     class LORA_API demod : virtual public gr::block
     {
      public:
-      typedef boost::shared_ptr<demod> sptr;
+      typedef std::shared_ptr<demod> sptr;
 
       /*!
        * \brief Return a shared_ptr to a new instance of lora::demod.

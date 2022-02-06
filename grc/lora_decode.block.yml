@@ -1,0 +1,20 @@
+id: lora_decode
+label: decode
+category: '[Lora]'
+templates:
+  imports: import lora
+  make: lora.decode(${spreading_factor}, ${code_rate}, ${low_data_rate}, ${header})
+parameters:
+- id: spreading_factor
+  label: Spreading_factor
+  dtype: raw
+- id: code_rate
+  label: Code_rate
+  dtype: raw
+- id: low_data_rate
+  label: Low_data_rate
+  dtype: raw
+- id: header
+  label: Header
+  dtype: raw
+file_format: 1

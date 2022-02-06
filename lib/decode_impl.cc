@@ -74,7 +74,7 @@ namespace gr {
       message_port_register_in(d_in_port);
       message_port_register_out(d_out_port);
 
-      set_msg_handler(d_in_port, boost::bind(&decode_impl::decode, this, _1));
+      set_msg_handler(d_in_port, boost::bind(&decode_impl::decode, this, boost::placeholders::_1));
 
       switch(d_sf)
       {

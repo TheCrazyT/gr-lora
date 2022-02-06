@@ -21,5 +21,9 @@ install(FILES
     lora_demod.xml
     lora_decode.xml
     lora_mod.xml
-    lora_encode.xml DESTINATION share/gnuradio/grc/blocks
+    lora_encode.xml
+    lora_decode.block.yml
+    lora_demod.block.yml
+    lora_encode.block.yml
+    lora_mod.block.yml DESTINATION share/gnuradio/grc/blocks
 )
